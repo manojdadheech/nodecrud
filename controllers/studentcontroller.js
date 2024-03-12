@@ -25,7 +25,7 @@ class StudentMethod {
         //     res.redirect('/');
         // });
         
-        res.redirect("/student")// Assuming you have a view engine set up
+        res.redirect("/")// Assuming you have a view engine set up
     }
 
 
@@ -41,7 +41,7 @@ class StudentMethod {
     static async Studentupdate(req, res) {
         console.log(req.params.id);
         const data= await studentModel.findByIdAndUpdate(req.params.id, req.body);
-        res.redirect('/student')
+        res.redirect('/')
          // Assuming you have a view engine set up
     }
 
@@ -59,7 +59,7 @@ class StudentMethod {
     //            console.log(err)
     //        }
     //    });
-        res.redirect("/student") // Assuming you have a view engine set up
+        res.redirect("/") // Assuming you have a view engine set up
     }
 }
 export default StudentMethod; // Exporting the class for use in other modules
