@@ -1,0 +1,54 @@
+<%-include('./header.ejs')%>
+
+
+    <div class="row">
+        <!-- Column -->
+        <div class="col-md-6">
+
+        <div class="modal-content">
+				    <div class="card">
+				        <h4 class="modal-title text-uppercase text-info">Update Record</h4>
+				        
+				    </div>
+
+                    <form  method="post">
+				    <div class="card-body">
+                        <input type="hidden" name="id" value="<%=data._id%>">
+				      	<div class="form-group">
+				      		<label for="firstname">First Name:</label>
+				      		<input type="text" name="firstname" id="firstname" autocomplete="off" class="form-control" placeholder="Enter First Name" value="<%=data.firstname%>" required>
+				      	</div>
+				      	<div class="form-group">
+				      		<label for="lastname">Last Name:</label>
+				      		<input type="text" name="lastname" id="lastname"  autocomplete="off" class="form-control" placeholder="Enter Last Name" value="<%=data.lastname%>" required>
+				      	</div>
+				      	<div class="form-group">
+				      		<label for="email">Email Id:</label>
+				      		<input type="email" name="email" id="email"  class="form-control" placeholder="Enter Email Id" value="<%=data.email%>" required>
+				      	</div>
+				      	<div class="form-group">
+				      		<label for="mobile">Mobile Number:</label>
+				      		<input type="text" name="mobile" id="mobile" autocomplete="off" class="form-control" placeholder="Enter Mobile Number" value="<%=data.mobile%>" required>
+				      	</div>
+				        
+				    </div>
+				    <div >
+				      <button type="submit" class="btn  btn-primary m-1 float-auto">Update</button>
+				    </div>
+
+                    </form>
+			    </div>
+
+
+
+        </div>
+      
+    </div>
+
+
+
+			
+			   
+		
+		
+    <%-include('./footer.ejs')%>

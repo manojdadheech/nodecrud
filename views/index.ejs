@@ -1,0 +1,90 @@
+<%-include('./header.ejs')%>
+
+
+    <div class="row">
+        <!-- Column -->
+        <div class="col-md-5">
+
+        <div class="modal-content">
+				    <div class="card">
+				        <h4 class="modal-title text-uppercase text-info">Insert Record</h4>
+				        
+				    </div>
+
+                    <form  method="post">
+				    <div class="card-body">
+				      	<div class="form-group">
+				      		<label for="firstname">First Name:</label>
+				      		<input type="text" name="firstname" id="firstname" autocomplete="off" class="form-control" placeholder="Enter First Name" required>
+				      	</div>
+				      	<div class="form-group">
+				      		<label for="lastname">Last Name:</label>
+				      		<input type="text" name="lastname" id="lastname"  autocomplete="off" class="form-control" placeholder="Enter Last Name" required>
+				      	</div>
+				      	<div class="form-group">
+				      		<label for="email">Email Id:</label>
+				      		<input type="email" name="email" id="email"  class="form-control" placeholder="Enter Email Id" required>
+				      	</div>
+				      	<div class="form-group">
+				      		<label for="mobile">Mobile Number:</label>
+				      		<input type="text" name="mobile" id="mobile" autocomplete="off" class="form-control" placeholder="Enter Mobile Number" required>
+				      	</div>
+				        
+				    </div>
+				    <div >
+				      <button type="submit" class="btn  btn-primary m-1 float-auto">Submit</button>
+				    </div>
+
+                    </form>
+			    </div>
+
+
+
+        </div>
+        <% var i=1; %>
+        <div class="col-md-7">
+
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%data.forEach((item)=>{
+      %>
+      <tr>
+        <th scope="row"><%=(i++)%></th>
+        <td><%= item.firstname %></td>
+        <td><%= item.lastname %></td>
+        <td><%= item.email %></td>
+        <td><%= item.mobile %></td>
+        <td>
+          <a href="/student/edit/<%=item._id%>" class="btn btn-primary">Edit</a>
+          <a href="/student/delete/<%=item._id%>" class="btn btn-danger ">Delete</a>
+          
+        </td>
+      </tr>
+
+
+   <% }) %>
+   
+   
+  </tbody>
+</table>
+
+        </div>
+    </div>
+
+
+
+			
+			   
+		
+		
+    <%-include('./footer.ejs')%>
